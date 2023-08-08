@@ -12,7 +12,7 @@
 
 | Tasks | Description | Files |
 | ----- | ----- | ----- |
-| <ul><li> - [ ] Task 0 </li></ul> | 0. We are all unique! | [0-uniq_users.sql](0-uniq_users.sql) |
+| <ul><li> - [x] Task 0 </li></ul> | 0. We are all unique! | [0-uniq_users.sql](0-uniq_users.sql) |
 | <ul><li> - [ ] Task 1 </li></ul> | 1. In and not out | [1-country_users.sql](1-country_users.sql) |
 | <ul><li> - [ ] Task 2 </li></ul> | 2. Best band ever! | [2-fans.sql](2-fans.sql) |
 | <ul><li> - [ ] Task 3 </li></ul> | 3. Old school band | [3-glam_rock.sql](3-glam_rock.sql) |
