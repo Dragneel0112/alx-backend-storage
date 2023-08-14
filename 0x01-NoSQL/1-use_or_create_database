@@ -1,0 +1,2 @@
+// Create or use database in Mongodb
+use my_db;
