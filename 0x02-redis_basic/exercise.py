@@ -2,9 +2,33 @@
 '''
 Using Python for Redis (NoSQL DB)
 '''
-from typing import Callable, Union
+from functools import wraps
+from typing import Any, Callable, Union
 import redis
 import uuid
+
+
+def count_calls(method: Callable) -> Callable:
+    '''
+    Counts number of calls made to a method in class Cache
+    '''
+    @wraps(method)
+    def wrapper(self, *args, **kwargs) -> Any:
+        '''
+        Returns the method after incrementing its counter
+
+        Args:
+            args: Tracks arguments
+            kwargs: Tracks key word arguments
+
+        Return: Count of calls to class Cache
+        '''
+
+        if isinstance(self._redis, redis.Redis):
+            self._redis.incr(method.__qualname__)
+        return method(self, *args, **kwargs)
+
+    return wrapper
 
 
 class Cache:
@@ -19,6 +43,7 @@ class Cache:
         self._redis = redis.Redis()
         self._redis.flushdb(True)
 
+    @count_calls
     def store(self, data:  Union[str, bytes, int, float]) -> str:
         '''
         Stores a value in Redis returns the key
