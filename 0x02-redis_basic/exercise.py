@@ -60,7 +60,7 @@ def call_history(method: Callable) -> Callable:
 def replay(fn: Callable) -> None:
     '''
     Displays the call history of methods from class Cache
-    
+
     Args:
         fn: Function called
 
